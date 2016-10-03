@@ -564,7 +564,7 @@ class PackageController(base.BaseController):
             try:
                 if resource_id:
                     data['id'] = resource_id
-                    get_action('resource_update')(context, data)
+                    get_action('resource_patch')(context, data)
                 else:
                     get_action('resource_create')(context, data)
             except ValidationError, e:
